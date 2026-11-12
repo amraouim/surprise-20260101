@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#071622" />
+    <title>Pour Sasha — Une surprise de Noël</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="sasha-styles.css" />
+  </head>
+  <body>
+    <div class="snow-layer" aria-hidden="true"></div>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+
+    <main class="scene">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Retour en haut"><span>✦</span> Un cadeau pour Sasha</a>
+        <div class="topbar-status"><span class="status-dot"></span> Message privé · Noël 2026–2027</div>
+      </header>
+
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Une petite expérience rien que pour toi</p>
+          <h1>Joyeux<br /><em>Noël, Sasha.</em></h1>
+          <p class="hero-text">J'ai caché quelques surprises dans cet écrin. Prends ton temps, écoute la musique et découvre-les une à une.</p>
+          <div class="hero-actions">
+            <button class="primary-btn" id="startExperience" type="button">Ouvrir la surprise <span>→</span></button>
+            <button class="song-link song-button" id="playSong" type="button"><span class="play-icon">▶</span> Écouter la chanson</button>
+          </div>
+          <div class="made-for"><span class="avatar">S</span><span>Créé avec amour<br /><strong>pour toi</strong></span></div>
+        </div>
+
+        <div class="hero-art" id="treeSection">
+          <div class="orb orb-one"></div>
+          <div class="orb orb-two"></div>
+          <div class="tree-glow"></div>
+          <div class="tree-wrap" aria-label="Arbre de Noël interactif">
+            <button class="star" type="button" data-surprise="star" aria-label="Découvrir la surprise de l'étoile">★</button>
+            <div class="tree-layer layer-1"></div>
+            <div class="tree-layer layer-2"></div>
+            <div class="tree-layer layer-3"></div>
+            <div class="tree-layer layer-4"></div>
+            <button class="ornament o1" type="button" data-surprise="heart" aria-label="Surprise cœur"></button>
+            <button class="ornament o2" type="button" data-surprise="wish" aria-label="Surprise vœu"></button>
+            <button class="ornament o3" type="button" data-surprise="memory" aria-label="Surprise souvenir"></button>
+            <button class="ornament o4" type="button" data-surprise="heart" aria-label="Surprise cœur"></button>
+            <button class="ornament o5" type="button" data-surprise="wish" aria-label="Surprise vœu"></button>
+            <button class="ornament o6" type="button" data-surprise="memory" aria-label="Surprise souvenir"></button>
+            <button class="ornament o7" type="button" data-surprise="heart" aria-label="Surprise cœur"></button>
+            <button class="ornament o8" type="button" data-surprise="wish" aria-label="Surprise vœu"></button>
+            <button class="ornament o9" type="button" data-surprise="memory" aria-label="Surprise souvenir"></button>
+            <button class="ornament o10" type="button" data-surprise="heart" aria-label="Surprise cœur"></button>
+            <div class="garland g1"></div><div class="garland g2"></div><div class="garland g3"></div>
+            <div class="trunk"></div><div class="base"></div>
+          </div>
+          <div class="tree-hint"><span>✦</span> Clique sur les décorations pour trouver les surprises</div>
+        </div>
+      </section>
+
+      <section class="experience" id="experience">
+        <div class="section-heading">
+          <div><p class="eyebrow">Ton petit parcours</p><h2>À toi de jouer</h2></div>
+          <div class="progress-label"><span id="surpriseCount">0</span> / 5 découvertes</div>
+        </div>
+        <div class="progress-track"><span id="progressBar"></span></div>
+        <div class="cards">
+          <article class="feature-card featured">
+            <div class="card-icon">♫</div><p class="card-kicker">01 · La bande-son</p><h3>Une chanson pour toi</h3>
+            <p>Parce que certaines mélodies disent ce que les mots n'arrivent pas toujours à dire.</p>
+            <button class="text-link text-button" id="playSongCard" type="button">Lancer la chanson <span>▶</span></button>
+          </article>
+          <article class="feature-card">
+            <div class="card-icon pink">♡</div><p class="card-kicker">02 · Le jeu</p><h3>Le quiz de Noël</h3>
+            <p>Réponds aux trois questions et gagne l'accès au message secret.</p>
+            <button class="text-link text-button" id="openQuiz" type="button">Commencer le quiz <span>→</span></button>
+          </article>
+          <article class="feature-card">
+            <div class="card-icon blue">✧</div><p class="card-kicker">03 · Le mot doux</p><h3>À garder précieusement</h3>
+            <p>Un message personnel t'attend au bout du chemin.</p>
+            <button class="text-link text-button" id="openMessage" type="button">Déverrouiller <span>→</span></button>
+          </article>
+        </div>
+      </section>
+
+      <footer><span>Fait avec patience, lumière et beaucoup d'affection.</span><span>Pour Sasha <span class="footer-heart">♥</span></span></footer>
+    </main>
+
+    <div class="modal-backdrop" id="modalBackdrop" hidden>
+      <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="modal-close" id="closeModal" type="button" aria-label="Fermer">×</button>
+        <div class="modal-sparkle">✦</div><p class="eyebrow" id="modalKicker">Une surprise</p>
+        <h2 id="modalTitle"></h2><p id="modalText"></p><div id="modalContent"></div>
+      </section>
+    </div>
+    <audio id="localSong" class="local-audio" preload="metadata" src="sasha-song.mp3"></audio>
+    <script src="sasha-script.js"></script>
+  </body>
+</html>
